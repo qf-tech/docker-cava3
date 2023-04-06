@@ -1,6 +1,18 @@
 version: "3"
 
 services:
+  mysql:
+   build:
+     context: ""
+     dockerfile: Dockerfile_mysql
+   image: mysql:1.0
+   environment:
+     TZ: ${TZ:-Asia/Shanghai}
+     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-123456}
+   command: --innodb_use_native_aio=0
+   ports:
+     - 3306:3306
+
   redis:
     build:
       context: ""
@@ -16,6 +28,7 @@ services:
     image: proxy:1.0
     depends_on:
       - redis
+      - mysql
     ports:
       - 9010:9010
 
@@ -37,6 +50,7 @@ services:
     image: openapi:1.0
     depends_on:
       - smu
+      - mysql
     ports:
       - 9030:9030
 

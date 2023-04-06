@@ -23,8 +23,8 @@
                 <!-- <proxyuri>POST /cava3/upload</proxyuri> -->
         </client>
         <mysql>
-                <host>180.76.144.58</host>
-                <port>9851</port>
+                <host>cava3_mysql_1</host>
+                <port>3306</port>
                 <username>root</username>
                 <password>
                         <encrypt>true</encrypt>

@@ -37,4 +37,7 @@ echo "export USER=root" >> ~/.bashrc
 echo "export PATH=/usr/local/bin:/usr/local/lib:/usr/local/bin/CAVA3/Python37/bin:\$PATH" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/bin/CAVA3/Python37/lib:/usr/local/bin/CAVA3/Python37/bin:\$LD_LIBRARY_PATH" >> ~/.bashrc
 echo "source ~/.bashrc" >> /etc/profile
+
+sed -i "s/9000/9010/g" /usr/local/bin/CAVA3/CAVA_SPACE3/src/tools/config.xml
+
 echo "[${time}][info] ${mode_branch} install cava3 success."
